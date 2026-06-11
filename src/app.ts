@@ -1,4 +1,5 @@
 import express from 'express';
+import serviceRoutes from './routes/service.routes';
 
 
 const app = express();
@@ -16,5 +17,7 @@ app.get("/health",(req,res)=>{
         message:"Backend Server is running...."
     })
 })
+
+app.use("/api/services", serviceRoutes);
 
 export default app;
